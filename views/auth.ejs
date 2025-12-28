@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/general.css">
+    <title>Auth</title>
+</head>
+<body>
+    <div class="main">
+        <h1>LOGIN</h1>
+        <form action="/auth" method="post">
+            <input type="password" name="pass" id="passwd" placeholder="PASSWORD">
+        </form>
+        <h4>*The owner of this site has authentication enabled</h4>
+    </div>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main {
+            width: 40vw;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(120, 120, 120, 0.6);
+            border-radius: 10px;
+        }
+        .main input {
+            width: 20vw;
+            height: 5vh;
+            font-size: 4vh;
+        }
+    </style>
+</body>
+</html>

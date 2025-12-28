@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/general.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Welcome <%= siteOwner %></h1>
+        <h2>Available Directories:</h2>
+        <div class="whiteListDisp">
+            <% fldrs.forEach((folder) => { %>
+                <a href=<%=`./selector?fldr=${folder}` %>><%= folder %> </a>
+            <% }); %>
+        </div>
+    </div>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .whiteListDisp {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            flex-grow: inherit;            
+        }
+        .whiteListDisp a {
+			width: 10vw;
+			margin: 1vw;
+			padding: 5px;
+			background: rgba(120,120,120, 0.7);
+			border-radius: 10px;
+			text-decoration: none;
+			height: 5vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.whiteListDisp a:hover {
+			background-color: greenyellow;
+		}
+    </style>
+</body>
+</html>

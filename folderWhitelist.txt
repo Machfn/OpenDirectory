@@ -1,0 +1,2 @@
+/home/benon/projects/forViewing
+/home/benon/projects/photoCatalog
