@@ -1,2 +1,2 @@
-/home/benon/projects/forViewing
-/home/benon/projects/photoCatalog
+/home/user/example
+C:/users/user/documents/example
