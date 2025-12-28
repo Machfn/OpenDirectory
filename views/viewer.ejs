@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/public/general.css">
+	<title>File Viewer</title>
+</head>
+	<%- include('partials/header', {folders: fldrs}); %>
+	<div id="main">
+		<h1><%= fileName %></h1>
+		<embed src="<%=fileName%>" type="application/pdf" width="100%" height="80%" />
+	</div>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+		}
+		#main {
+			padding: 15px;
+			width: 80%;
+			text-align: left;
+		}
+	</style>
+</body>
+</html>
+

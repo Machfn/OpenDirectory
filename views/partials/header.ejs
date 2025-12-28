@@ -1,0 +1,30 @@
+<div class="header">
+	<h1>OPEN DIRECTORIES</h1>
+	<div class="links">
+		<% folders.forEach((fldr) => { %>
+			<a href=<%=`/selector?fldr=${fldr}`%>><%=fldr%></a>
+		<% }); %>
+	</div>
+</div>
+<style>
+	.header {
+		min-width: 550px;
+		height: 10vh;
+		background-color: rgba(120,120,120,0.7);
+		border-radius: 10px;
+		display: flex;
+		padding: 5px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.header a {
+		padding: 5px;
+	}
+	.links {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		flex-wrap:wrap;
+	}
+</style>
