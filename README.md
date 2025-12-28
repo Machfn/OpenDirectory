@@ -2,21 +2,16 @@
 <p>
     Open Directory is a file server tool that is intended to make it easy to quickly setup document databases. <br \>
     <strong> Feature Set: </strong> <br \>
-    <span class="indented">
+    <ul>
     Password Protection <br \>
     Web GUI <br \>
     Easy Addition of Directories - Zero Programming Needed <br \>
     Easy toggling of feature - All done through txt files <br \>
-    </span>
+    </ul>
 
     Open Directory is built on nodejs using express, pages are rendered server-side using ejs
     making the look of pages fully customizable with basic html and css
 </p>
-<style>
-    .indented {
-        text-indent: 2em;
-    }
-</style>
 
 
 
