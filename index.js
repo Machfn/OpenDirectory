@@ -80,7 +80,6 @@ try {
 			console.log(`\t Adding ${dataArr[i]} to whitelist`)
 			whiteList.set(dirName, dataArr[i]);
 			whiteListKeys.push(dirName);
-			// whiteList.push(`${dirName}`);
 		}
 	}
 } catch (err) { console.error(`Problem loading whiteList file: ${err}`); }
@@ -107,11 +106,7 @@ if (auth) {
 		if (req.cookies.authed != undefined && exprHelpers.checkCookie(cipherValue,req.cookies.authed) ) { 
 			next(); 
 		} else { 
-			if (req.path === '/auth') {
-				next();
-			} else {
-				res.redirect('/auth'); 
-			}
+			(req.path === '/auth') ? next() : res.redirect('/auth'); 
 		}
 	});
 }
@@ -136,7 +131,7 @@ app.get('/selector', (req, res) => {
 });
 
 app.get('/auth', (req, res) => {
-	res.render('auth');
+	res.render('auth', {passwdError: false});
 });
 
 app.post('/auth', (req, res) => {
@@ -144,9 +139,9 @@ app.post('/auth', (req, res) => {
 	if (crypto.timingSafeEqual(b, bPass)) {
 		res.cookie('authed', cipherValue, {maxAge: (exprHelpers.toMs(cookieTimeout))});
 		// res.json({message: 'Successful login', status: 200});
-		res.redirect('/');
+		res.status(200).redirect('/');
 	} else {
-		res.json({message: `Bad Password`, status: 400});
+		res.status(401).render('auth', {passwdError: true});
 	}
 });
 

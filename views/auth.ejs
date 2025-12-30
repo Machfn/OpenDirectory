@@ -7,6 +7,9 @@
 </head>
 <body>
     <div class="main">
+        <% if(passwdError) { %>
+            <h3 class="error">Incorrect Password</h3>
+        <% } %>
         <h1>LOGIN</h1>
         <form action="/auth" method="post">
             <input type="password" name="pass" id="passwd" placeholder="PASSWORD">
@@ -20,6 +23,7 @@
             align-items: center;
         }
         .main {
+            min-width: 450px;
             width: 40vw;
             height: 40vh;
             display: flex;
@@ -30,9 +34,20 @@
             border-radius: 10px;
         }
         .main input {
+            min-width: 250px;
             width: 20vw;
             height: 5vh;
             font-size: 4vh;
+        }
+        .error {
+            min-width: 250px;
+            width: 60%;
+            height: 5vh;
+            background: rgba(230, 0, 0, 0.6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </body>
